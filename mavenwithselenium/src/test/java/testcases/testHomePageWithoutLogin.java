@@ -21,14 +21,14 @@ public class testHomePageWithoutLogin {
        homePageWithoutLogin =new homePageWithoutLogin(driver);
     }
     @Test
-    public void changeLanguage(){
+    public void shouldChangeLanguageToUS(){
         
         homePageWithoutLogin.selectLanguage();
         String actualResult=driver.getCurrentUrl();
         Assert.assertEquals(actualResult, "https://hyt-sandbox.kardsys.com/?lang=EN");
     }
     @Test
-    public void login() throws InterruptedException{
+    public void shouldLoginSuccessfully() throws InterruptedException{
         //homePageWithoutLogin =new homePageWithoutLogin(driver);
         homePageWithoutLogin.openLoginPage();
         homePageWithoutLogin.loginToHYTPage("aria@kardapp.net", "1234@Tps");
